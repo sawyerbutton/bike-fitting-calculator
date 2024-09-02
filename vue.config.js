@@ -1,5 +1,8 @@
 const { defineConfig } = require('@vue/cli-service')
+// 基本路径根据当前是生产环境还是开发环境来判断
+let BASE_URL = process.env.NODE_ENV === 'production' ? '/bike-fitting-calculator/' : '/'
 module.exports = defineConfig({
+  publicPath: BASE_URL,
   transpileDependencies: true,
   runtimeCompiler: true,
   productionSourceMap: true,//SourceMap是否开启
